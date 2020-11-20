@@ -3567,6 +3567,16 @@ static int set_battery_data(struct qpnp_bms_chip *chip)
 				return -EINVAL;
 			}
 		}
+        } else if (is_project(OPPO_15009)) {
+		node = of_find_node_by_name(chip->spmi->dev.of_node,
+					"qcom,battery-data-sony");
+		if (!node) {
+			pr_err("No available batterydata\n");
+			return -EINVAL;
+		} else
+			{
+				pr_err("available high sony batterydata\n");
+			}
 	} else {
 		node = of_find_node_by_name(chip->spmi->dev.of_node,
 					"qcom,battery-data");
