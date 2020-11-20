@@ -22,6 +22,13 @@ config MACH_14005
 	help
 	  Support for the R5/R5s variants
 
+config MACH_15009
+	bool "A51f board"
+	select MACH_OPPO_MSM8939
+	select SND_SOC_TS4621
+	help
+	   Support for the A51f variant
+
 config MACH_15011
 	bool "R7f board"
 	select MACH_OPPO_MSM8939
